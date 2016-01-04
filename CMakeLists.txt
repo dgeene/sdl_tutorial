@@ -32,3 +32,4 @@ include_directories(include)
 
 # build lesssons
 add_subdirectory(Lesson0)
+add_subdirectory(Lesson1)
