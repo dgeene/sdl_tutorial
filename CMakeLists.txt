@@ -3,10 +3,11 @@ cmake_minimum_required(VERSION 2.6)
 project(SDLTutorials)
 
 # use our modified FindSDL2* modules
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${sdl_tutorial_SOURCE_DIR/cmake}")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SDLTutorials_SOURCE_DIR}/cmake")
+MESSAGE(STATUS "CMAKE MODULE PATH: " ${CMAKE_MODULE_PATH})
 
 # output directory for binaries
-set(BIN_DIR ${sdl_tutorial_SOURCE_DIR/bin})
+set(BIN_DIR ${SDLTutorials_SOURCE_DIR}/bin)
 
 
 # bump warning levels for clang, gcc, msvc.
@@ -27,6 +28,7 @@ endif()
 # look up SDL2 and add to our include path
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
+include_directories(include)
 
 # build lesssons
 add_subdirectory(Lesson0)
