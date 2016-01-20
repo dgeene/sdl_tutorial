@@ -14,7 +14,7 @@
  * the first one in the list each iteration.
  */
 template<typename T, typename... Args>
-void cleanup(T *t, Args&&.. Args)
+void cleanup(T *t, Args&&... args)
 {
     cleanup(t); // clean first item in the list
     cleanup(std::forward<Args>(args)...); // recurse to clean up remaining args
